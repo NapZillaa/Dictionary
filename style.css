@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #222;
+  background: linear-gradient(270deg, #ffdde1, #c2e9fb, #fbc2eb, #e0c3fc);
+  background-size: 800% 800%;
+  animation: animateBg 20s ease infinite;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+@keyframes animateBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.search-form {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border-radius: 12px;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+}
+
+.search-form input {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+  outline: none;
+}
+
+.search-form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-form button {
+  background-color: #ffeb3b;
+  color: #000;
+  border: none;
+  padding: 0 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-form button:hover {
+  background-color: #fff176;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeInScale 0.6s ease-out;
+  color: #222;
+  text-align: left;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.property {
+  margin: 1rem 0;
+}
+
+.property > span:first-of-type {
+  display: block;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.definition-item {
+  margin-left: 1rem;
+  list-style-type: disc;
+}
+
+.synonyms, .antonyms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.synonym-tag, .antonym-tag {
+  background-color: #e0e0e0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+audio {
+  width: 100%;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  padding: 4px;
+}
+
+.search-another-btn {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-another-btn:hover {
+  background-color: #43a047;
+}
+
+@media (max-width: 600px) {
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-form input,
+  .search-form button {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .search-form button {
+    padding: 1rem;
+  }
+}
